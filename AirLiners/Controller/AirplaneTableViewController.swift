@@ -12,6 +12,8 @@ class AirplaneTableViewController: UITableViewController {
     
     var airplaines = [Airplane]()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,13 +56,12 @@ class AirplaneTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
-        let vc = storyboard.instantiateViewController(withIdentifier: "AirPlaneDetailViewController") as? AirPlaneDetailViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "kAirPlaneDetailTableViewController") as? AirPlaneDetailTableViewController
         vc?.airPlane = airplaines[indexPath.row]
         vc?.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
-
 }
 
 

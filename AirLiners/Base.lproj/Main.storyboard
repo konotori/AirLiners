@@ -103,7 +103,7 @@
         <!--Air Plane Detail View Controller-->
         <scene sceneID="1rS-tf-Do4">
             <objects>
-                <viewController storyboardIdentifier="AirPlaneDetailViewController" id="eYE-d2-Q1r" customClass="AirPlaneDetailViewController" customModule="AirLiners" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="kAirPlaneDetailViewController" id="eYE-d2-Q1r" customClass="AirPlaneDetailViewController" customModule="AirLiners" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="O0g-by-QeH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -391,6 +391,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhN-96-AVe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1757.9710144927537" y="164.73214285714286"/>
+        </scene>
+        <!--Air Plane Detail Table View Controller-->
+        <scene sceneID="zgP-TY-rzX">
+            <objects>
+                <tableViewController storyboardIdentifier="kAirPlaneDetailTableViewController" id="dcW-l8-bBZ" customClass="AirPlaneDetailTableViewController" customModule="AirLiners" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SL6-hg-jpm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionHeader" rowHeight="36" id="ptX-Nz-Nyz">
+                                <rect key="frame" x="0.0" y="28" width="414" height="36"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ptX-Nz-Nyz" id="Diu-EE-S8s">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="36"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdw-9z-Baf">
+                                            <rect key="frame" x="18" y="0.0" width="378" height="20"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Vdw-9z-Baf" secondAttribute="bottom" constant="16" id="KU2-qt-qSy"/>
+                                        <constraint firstItem="Vdw-9z-Baf" firstAttribute="leading" secondItem="Diu-EE-S8s" secondAttribute="leading" constant="18" id="M2u-Pq-QQU"/>
+                                        <constraint firstItem="Vdw-9z-Baf" firstAttribute="top" secondItem="Diu-EE-S8s" secondAttribute="top" id="UIA-Pd-hE9"/>
+                                        <constraint firstAttribute="trailing" secondItem="Vdw-9z-Baf" secondAttribute="trailing" constant="18" id="Xpf-qP-qwz"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dcW-l8-bBZ" id="h8n-Cr-Hgw"/>
+                            <outlet property="delegate" destination="dcW-l8-bBZ" id="jCw-bF-ncV"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="Lp2-zB-CIA" kind="unwind" identifier="unWindToAirPlaneTableViewController" unwindAction="unwindToAirplaneTableViewWithUnwindSegue:" id="Rtz-xN-bUX"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ux3-iR-fUm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Lp2-zB-CIA" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2667" y="831"/>
         </scene>
     </scenes>
     <resources>
