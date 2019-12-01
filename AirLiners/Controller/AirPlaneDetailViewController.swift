@@ -24,6 +24,8 @@ class AirPlaneDetailViewController: UIViewController {
     
     var airPlane : Airplane?
     
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,6 +48,8 @@ class AirPlaneDetailViewController: UIViewController {
         }
       
     }
+    
+    // MARK: - Other
     
     // Hightlight name of airplane
     func formatString(_ string: String) -> NSMutableAttributedString {

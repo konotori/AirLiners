@@ -12,7 +12,7 @@ class AirplaneTableViewController: UITableViewController {
     
     var airplaines = [Airplane]()
     
-    
+    //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +49,7 @@ class AirplaneTableViewController: UITableViewController {
         return cell
     }
 
+    // MARK: - Navigation
     
     @IBAction func unwindToAirplaneTableView(unwindSegue: UIStoryboardSegue){
                 

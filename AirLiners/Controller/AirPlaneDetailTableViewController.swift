@@ -15,6 +15,8 @@ class AirPlaneDetailTableViewController: UITableViewController {
     var leftLabels = ["National Origin", "Manufacturer", "First Flight", "Produced", "Number Built", "Status"]
     var rightLbels: [String] = []
     
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,31 +42,8 @@ class AirPlaneDetailTableViewController: UITableViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-    // Action for back button
-    @objc func backButtonTapped(sender: UIButton!) {
-        performSegue(withIdentifier: "unWindToAirPlaneTableViewController", sender: Any?.self)
-    }
-    
-    // Hightlight name of airplane
-    func formatString(_ string: String) -> NSMutableAttributedString {
-        let s = string as NSString
-        let attributedString = NSMutableAttributedString(string: s as String)
-        let r = s.range(of: "Boeing \\d+", options: .regularExpression, range: NSMakeRange(0,s.length))
-        if r.length > 0 {
-            attributedString.addAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17, weight: .bold)], range: r)
-        }
-        return attributedString
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 1 {
-            return leftLabels.count
-        }
-        if section == 0 {
-            return 2
-        }
-        return 0
-    }
+
+    // MARK: - Table view data source
        
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
@@ -104,11 +83,41 @@ class AirPlaneDetailTableViewController: UITableViewController {
         return UIView()
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 1 {
+            return leftLabels.count
+        }
+        if section == 0 {
+            return 2
+        }
+        return 0
+    }
+    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
             return 0
         }
         return 36
+    }
+    
+    // MARK: - Navigation
+    
+    // Action for back button
+    @objc func backButtonTapped(sender: UIButton!) {
+        performSegue(withIdentifier: "unWindToAirPlaneTableViewController", sender: Any?.self)
+    }
+    
+    // MARK: - Other
+    
+    // Hightlight name of airplane
+    func formatString(_ string: String) -> NSMutableAttributedString {
+        let s = string as NSString
+        let attributedString = NSMutableAttributedString(string: s as String)
+        let r = s.range(of: "Boeing \\d+", options: .regularExpression, range: NSMakeRange(0,s.length))
+        if r.length > 0 {
+            attributedString.addAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17, weight: .bold)], range: r)
+        }
+        return attributedString
     }
 }
 
