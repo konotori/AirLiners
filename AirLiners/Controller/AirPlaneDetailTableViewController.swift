@@ -36,7 +36,7 @@ class AirPlaneDetailTableViewController: UITableViewController {
         let atrributedString = string as NSString
         let mutabelAttributedString = NSMutableAttributedString(string: atrributedString as String)
         let range = atrributedString.range(of: "Boeing \\d+", options: .regularExpression, range: NSMakeRange(0,atrributedString.length))
-        if r.length > 0 {
+        if range.length > 0 {
             mutabelAttributedString.addAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17, weight: .bold)], range: range)
         }
         return mutabelAttributedString
