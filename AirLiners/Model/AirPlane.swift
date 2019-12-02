@@ -9,16 +9,16 @@
 import Foundation
 
 struct Airplane {
-    let model : String
-    let shortInfo : String
-    let longDescription : String
-    let nationalOrigin : String
-    let manufacturer : String
-    let firstFlight : String
-    let proceduced : String
-    let numberBuilt : String
-    let status : String
-    let image : String
+    let model: String
+    let shortInfo: String
+    let longDescription: String
+    let nationalOrigin: String
+    let manufacturer: String
+    let firstFlight: String
+    let proceduced: String
+    let numberBuilt: String
+    let status: String
+    let image: String
     
     init(model: String, shortInfo: String, longDescription: String, nationalOrigin: String, manufacturer: String, firstFlight: String, proceduced: String,  numberBuilt: String, status: String, image: String) {
         self.model = model
@@ -46,6 +46,4 @@ struct Airplane {
             Airplane(model: "787 Dreamliner", shortInfo: "Heavy, twin-engine, twin aisle, long-range widebody", longDescription: "The Boeing 787 Dreamliner is an American long-haul, mid-size wide-body, twin-engine jet airliner manufactured by Boeing Commercial Airplanes. Its variants seat 242 to 330 passengers in typical two-class seating configurations. It is the first airliner with an airframe constructed primarily of composite materials. The 787 was designed to be 20% more fuel-efficient than the Boeing 767, which it was intended to replace. The 787 Dreamliner's distinguishing features include mostly electrical flight systems, raked wingtips, and noise-reducing chevrons on its engine nacelles.", nationalOrigin: "United States", manufacturer: "Boeing Commercial Airplanes", firstFlight: "December 15, 2009", proceduced: "2007–present", numberBuilt: "906 as of October 2019", status: "In service", image: "B787")
         ]
     }
-    
-    
 }

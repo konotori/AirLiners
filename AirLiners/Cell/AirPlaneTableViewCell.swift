@@ -9,21 +9,15 @@
 import UIKit
 
 class AirPlaneTableViewCell: UITableViewCell {
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var modelNameLabel: UILabel!
     @IBOutlet weak var shorInfo: UILabel!
     @IBOutlet weak var modelImage: UIImageView!
     @IBOutlet weak var viewCell: UIView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    // MARK: - Functions
     
     func update(with airplane: Airplane) {
         modelNameLabel.text = "The Boing \(airplane.model)"
@@ -31,9 +25,5 @@ class AirPlaneTableViewCell: UITableViewCell {
         modelImage.image = UIImage(named: airplane.image)
         modelImage.layer.cornerRadius = 8
         viewCell.layer.cornerRadius = 7
-
     }
-    
-
-
 }

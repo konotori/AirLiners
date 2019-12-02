@@ -10,28 +10,34 @@ import UIKit
 
 class AirplaneTableViewController: UITableViewController {
     
+    // MARK: - Properties
+    
     var airplaines = [Airplane]()
     
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         airplaines = Airplane.loadDataAirPlane()
-        
-        // Customize title of navigation bar
+        customNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    // MARK: - Functions
+    
+    func customNavigationBar() {
         let logo = UIImage(named: "NavTitle")
         let imageView = UIImageView(image: logo)
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-    
-
-    // MARK: - Table view data source
+    // MARK: - UITableViewDataSource
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -41,12 +47,25 @@ class AirplaneTableViewController: UITableViewController {
         return airplaines.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AirplaneCell", for: indexPath) as! AirPlaneTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AirplaneCell", for: indexPath) as? AirPlaneTableViewCell else {
+            return UITableViewCell()
+        }
+        
         let airplane = airplaines[indexPath.row]
         cell.update(with: airplane)
+        
         return cell
+    }
+    
+    // MARK: - UITableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "kAirPlaneDetailTableViewController") as? AirPlaneDetailTableViewController else { return }
+        vc.airPlane = airplaines[indexPath.row]
+        vc.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     // MARK: - Navigation
@@ -54,15 +73,6 @@ class AirplaneTableViewController: UITableViewController {
     @IBAction func unwindToAirplaneTableView(unwindSegue: UIStoryboardSegue){
                 
      }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
-        let vc = storyboard.instantiateViewController(withIdentifier: "kAirPlaneDetailTableViewController") as? AirPlaneDetailTableViewController
-        vc?.airPlane = airplaines[indexPath.row]
-        vc?.modalPresentationStyle = .fullScreen
-        self.navigationController?.pushViewController(vc!, animated: true)
-    }
-    
 }
 
 

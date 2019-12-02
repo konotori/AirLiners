@@ -9,6 +9,9 @@
 import UIKit
 
 class AirPlaneDetailViewController: UIViewController {
+    
+    // MARK: - Outlets
+    
     @IBOutlet var InformationView: [UIView]!
     @IBOutlet weak var longDescriptionLabel: UILabel!
     @IBOutlet weak var nationalOriginLabel: UILabel!
@@ -21,6 +24,8 @@ class AirPlaneDetailViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet var rootView: UIView!
+    
+    // MARK: - Properties
     
     var airPlane : Airplane?
     
@@ -37,7 +42,8 @@ class AirPlaneDetailViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-    // Draw bottom border of cell view
+    // MARK: - Functions
+    
     func addBottomBorders(optionViews: [UIView]) {
         for uiView in optionViews {
             let thickness: CGFloat = 1.0
@@ -46,31 +52,27 @@ class AirPlaneDetailViewController: UIViewController {
             bottomBorder.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0).cgColor
             uiView.layer.addSublayer(bottomBorder)
         }
-      
     }
     
-    // MARK: - Other
-    
-    // Hightlight name of airplane
-    func formatString(_ string: String) -> NSMutableAttributedString {
-        let s = string as NSString
-        let attributedString = NSMutableAttributedString(string: s as String)
-        let r = s.range(of: "Boeing \\d+", options: .regularExpression, range: NSMakeRange(0,s.length))
-        if r.length > 0 {
-            attributedString.addAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17, weight: .bold)], range: r)
+    func hightLightName(_ string: String) -> NSMutableAttributedString {
+        let atrributedString = string as NSString
+        let mutabelAttributedString = NSMutableAttributedString(string: atrributedString as String)
+        let range = atrributedString.range(of: "Boeing \\d+", options: .regularExpression, range: NSMakeRange(0,atrributedString.length))
+        
+        if range.length > 0 {
+            mutabelAttributedString.addAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17, weight: .bold)], range: range)
         }
-        return attributedString
+        
+        return mutabelAttributedString
     }
     
     func updateView() {
-        // Update constraint for content view
         scrollView.contentInset = UIEdgeInsets(top: -44 , left: 0, bottom: 0, right: 0)
         
-        // Update outlet content
         guard let airPlane = airPlane else { return }
         
         modelImageView.image = UIImage(named: airPlane.image)
-        longDescriptionLabel.attributedText = formatString(airPlane.longDescription)
+        longDescriptionLabel.attributedText = hightLightName(airPlane.longDescription)
         nationalOriginLabel.text = airPlane.nationalOrigin
         manufacturerLabel.text = airPlane.manufacturer
         firstFlightLabel.text = airPlane.firstFlight

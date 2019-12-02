@@ -16,6 +16,13 @@
 		1A3D4B7C238BCE88007B033B /* AirplaneTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D4B7B238BCE88007B033B /* AirplaneTableViewController.swift */; };
 		1AB3B0C6238FC5F100246784 /* AirPlaneDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB3B0C5238FC5F100246784 /* AirPlaneDetailViewController.swift */; };
 		1AB3B0CA2390CBB200246784 /* AirPlaneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB3B0C92390CBB200246784 /* AirPlaneTableViewCell.swift */; };
+		1AB3B0CD2391174E00246784 /* AirPlaneDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB3B0CC2391174E00246784 /* AirPlaneDetailTableViewController.swift */; };
+		1AB3B0D023911AC400246784 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB3B0CE23911AC400246784 /* DetailTableViewCell.swift */; };
+		1AB3B0D123911AC400246784 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB3B0CF23911AC400246784 /* DetailTableViewCell.xib */; };
+		1AD80CCC239425B500C3AC86 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD80CCA239425B500C3AC86 /* ImageTableViewCell.swift */; };
+		1AD80CCD239425B500C3AC86 /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD80CCB239425B500C3AC86 /* ImageTableViewCell.xib */; };
+		1AD80CD023942BF100C3AC86 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD80CCE23942BF100C3AC86 /* DescriptionTableViewCell.swift */; };
+		1AD80CD123942BF100C3AC86 /* DescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD80CCF23942BF100C3AC86 /* DescriptionTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +37,13 @@
 		1A3D4B7B238BCE88007B033B /* AirplaneTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneTableViewController.swift; sourceTree = "<group>"; };
 		1AB3B0C5238FC5F100246784 /* AirPlaneDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlaneDetailViewController.swift; sourceTree = "<group>"; };
 		1AB3B0C92390CBB200246784 /* AirPlaneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirPlaneTableViewCell.swift; sourceTree = "<group>"; };
+		1AB3B0CC2391174E00246784 /* AirPlaneDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlaneDetailTableViewController.swift; sourceTree = "<group>"; };
+		1AB3B0CE23911AC400246784 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		1AB3B0CF23911AC400246784 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
+		1AD80CCA239425B500C3AC86 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		1AD80CCB239425B500C3AC86 /* ImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTableViewCell.xib; sourceTree = "<group>"; };
+		1AD80CCE23942BF100C3AC86 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		1AD80CCF23942BF100C3AC86 /* DescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +92,7 @@
 		1A69621B238E7013000981EF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1AB3B0CC2391174E00246784 /* AirPlaneDetailTableViewController.swift */,
 				1A3D4B7B238BCE88007B033B /* AirplaneTableViewController.swift */,
 				1AB3B0C5238FC5F100246784 /* AirPlaneDetailViewController.swift */,
 			);
@@ -96,6 +111,12 @@
 			isa = PBXGroup;
 			children = (
 				1AB3B0C92390CBB200246784 /* AirPlaneTableViewCell.swift */,
+				1AB3B0CE23911AC400246784 /* DetailTableViewCell.swift */,
+				1AB3B0CF23911AC400246784 /* DetailTableViewCell.xib */,
+				1AD80CCA239425B500C3AC86 /* ImageTableViewCell.swift */,
+				1AD80CCB239425B500C3AC86 /* ImageTableViewCell.xib */,
+				1AD80CCE23942BF100C3AC86 /* DescriptionTableViewCell.swift */,
+				1AD80CCF23942BF100C3AC86 /* DescriptionTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -158,8 +179,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AD80CCD239425B500C3AC86 /* ImageTableViewCell.xib in Resources */,
 				1A3D4B72238BC5B9007B033B /* LaunchScreen.storyboard in Resources */,
+				1AD80CD123942BF100C3AC86 /* DescriptionTableViewCell.xib in Resources */,
 				1A3D4B6F238BC5B9007B033B /* Assets.xcassets in Resources */,
+				1AB3B0D123911AC400246784 /* DetailTableViewCell.xib in Resources */,
 				1A3D4B6D238BC5B9007B033B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,9 +195,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB3B0CD2391174E00246784 /* AirPlaneDetailTableViewController.swift in Sources */,
 				1AB3B0CA2390CBB200246784 /* AirPlaneTableViewCell.swift in Sources */,
+				1AB3B0D023911AC400246784 /* DetailTableViewCell.swift in Sources */,
+				1AD80CCC239425B500C3AC86 /* ImageTableViewCell.swift in Sources */,
 				1A3D4B7A238BC5F5007B033B /* AirPlane.swift in Sources */,
 				1A3D4B66238BC5B9007B033B /* AppDelegate.swift in Sources */,
+				1AD80CD023942BF100C3AC86 /* DescriptionTableViewCell.swift in Sources */,
 				1A3D4B68238BC5B9007B033B /* SceneDelegate.swift in Sources */,
 				1A3D4B7C238BCE88007B033B /* AirplaneTableViewController.swift in Sources */,
 				1AB3B0C6238FC5F100246784 /* AirPlaneDetailViewController.swift in Sources */,
