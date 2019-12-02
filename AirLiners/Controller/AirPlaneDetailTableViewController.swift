@@ -33,13 +33,13 @@ class AirPlaneDetailTableViewController: UITableViewController {
     // MARK: - Functions
     
     func hightLightName(_ string: String) -> NSMutableAttributedString {
-        let s = string as NSString
-        let attributedString = NSMutableAttributedString(string: s as String)
-        let r = s.range(of: "Boeing \\d+", options: .regularExpression, range: NSMakeRange(0,s.length))
+        let atrributedString = string as NSString
+        let mutabelAttributedString = NSMutableAttributedString(string: atrributedString as String)
+        let range = atrributedString.range(of: "Boeing \\d+", options: .regularExpression, range: NSMakeRange(0,atrributedString.length))
         if r.length > 0 {
-            attributedString.addAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17, weight: .bold)], range: r)
+            mutabelAttributedString.addAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17, weight: .bold)], range: range)
         }
-        return attributedString
+        return mutabelAttributedString
     }
     
     func registerCells() {
